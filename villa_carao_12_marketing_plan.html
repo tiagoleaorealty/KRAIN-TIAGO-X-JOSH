@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Carao 12 — Marketing Plan · KRAIN</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:     #1D6B5F;
+    --teal-mid: #2A8C7A;
+    --teal-lt:  #E8F5F2;
+    --gold:     #C9A96E;
+    --dark:     #0E1A18;
+    --mid:      #3A4A47;
+    --muted:    #7A8C89;
+    --cream:    #FAF8F4;
+    --white:    #FFFFFF;
+    --border:   rgba(29,107,95,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ───────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 80%, rgba(29,107,95,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 20%, rgba(201,169,110,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.08em;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    align-self: center;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.4s;
+  }
+
+  .scroll-cue span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ── INTRO SECTION ──────────────────────────────── */
+  .intro {
+    padding: 100px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+
+  .intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+
+  .intro p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--mid);
+  }
+
+  .gold-line {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 32px auto;
+  }
+
+  /* ── PROBLEM SECTION ────────────────────────────── */
+  .problem {
+    background: var(--dark);
+    padding: 80px 24px;
+  }
+
+  .problem-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .problem-inner { grid-template-columns: 1fr; }
+    .stat-divider { display: none; }
+    .hero-stats { gap: 24px; }
+  }
+
+  .problem-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .problem-header .section-label { color: var(--gold); }
+
+  .problem-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .problem-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 36px 32px;
+  }
+
+  .problem-card .icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .problem-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .problem-card p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── STEPS SECTION ──────────────────────────────── */
+  .steps {
+    padding: 100px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .steps-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .steps-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+
+  .steps-header p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 32px;
+    margin-bottom: 0;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .step::before {
+    content: '';
+    position: absolute;
+    left: 39px;
+    top: 80px;
+    width: 1px;
+    height: calc(100% - 40px);
+    background: var(--border);
+  }
+
+  .step:last-child::before { display: none; }
+
+  .step-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 28px;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--teal);
+    background: var(--cream);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .step:hover .step-num,
+  .step.active .step-num {
+    background: var(--teal);
+    color: var(--white);
+    border-color: var(--teal);
+  }
+
+  .step-body {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 0 36px;
+  }
+
+  .step-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--mid);
+    margin-bottom: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, margin-bottom 0.3s ease;
+  }
+
+  .step.active .step-desc {
+    max-height: 400px;
+    margin-bottom: 20px;
+  }
+
+  .step-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .step.active .step-pills {
+    max-height: 200px;
+  }
+
+  .pill {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: var(--teal-lt);
+    color: var(--teal);
+    border: 1px solid rgba(29,107,95,0.2);
+  }
+
+  /* ── VIDEO SECTION ──────────────────────────────── */
+  .video-section {
+    background: var(--dark);
+    padding: 80px 24px;
+  }
+
+  .video-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .video-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .video-header .section-label { color: var(--gold); }
+
+  .video-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .video-header p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ── REACH SECTION ──────────────────────────────── */
+  .reach {
+    padding: 100px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .reach-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .reach-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+
+  .reach-header p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .reach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .reach-card {
+    background: var(--cream);
+    padding: 32px 28px;
+    transition: background 0.2s ease;
+  }
+
+  .reach-card:hover { background: var(--white); }
+
+  .reach-card-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .reach-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .reach-card p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ── DIFFERENCE SECTION ─────────────────────────── */
+  .difference {
+    background: var(--teal);
+    padding: 80px 24px;
+  }
+
+  .difference-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .difference h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .difference h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .difference p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 580px;
+    margin: 0 auto 56px;
+    line-height: 1.8;
+  }
+
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    text-align: left;
+  }
+
+  .diff-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 28px 24px;
+  }
+
+  .diff-icon { font-size: 24px; margin-bottom: 14px; }
+
+  .diff-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .diff-item p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* ── CTA SECTION ────────────────────────────────── */
+  .cta-section {
+    padding: 100px 24px;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .cta-section p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  .cta-cards {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-card {
+    flex: 1;
+    min-width: 180px;
+    max-width: 220px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 24px 20px;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .cta-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(29,107,95,0.12);
+  }
+
+  .cta-card .cta-icon { font-size: 24px; margin-bottom: 10px; }
+
+  .cta-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .cta-card p {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ── FOOTER ─────────────────────────────────────── */
+  footer {
+    background: var(--dark);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  footer .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  footer p {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── ANIMATIONS ─────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* ── STATS BAND ─────────────────────────────────── */
+  .stats-band {
+    background: var(--dark);
+    padding: 80px 24px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .stats-band-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .stats-band-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .stat-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 36px 28px;
+    text-align: center;
+    transition: background 0.2s ease;
+  }
+
+  .stat-box:hover { background: rgba(255,255,255,0.06); }
+
+  .stat-box-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--teal-mid);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat-box-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+
+  .stat-box-sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">KRAIN Luxury Real Estate · Reserva Conchal · Confidential Marketing Proposal</p>
+  <h1>Villa Carao 12<br><em>A New Strategy.</em></h1>
+  <p class="hero-sub">Playa Conchal, Guanacaste, Costa Rica</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-val">$1,490,000</div>
+      <div class="stat-label">Asking Price</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-val">4 / 4</div>
+      <div class="stat-label">Bed / Bath</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-val">7,804</div>
+      <div class="stat-label">Sq Ft</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-val">1 Year</div>
+      <div class="stat-label">On Market</div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro reveal">
+  <p class="section-label">The Opportunity</p>
+  <h2>This property deserves better than what it has received.</h2>
+  <div class="gold-line"></div>
+  <p>Villa Carao 12 is an exceptional home in one of Costa Rica's most desirable communities. The reason it hasn't sold isn't the property — it's the visibility. This proposal outlines exactly how we will change that.</p>
+</section>
+
+<!-- STATS BAND -->
+<section class="stats-band">
+  <div class="stats-band-inner">
+    <div class="stats-band-header reveal">
+      <p class="section-label" style="color:var(--gold)">Proven Results</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:300;color:var(--white);margin-bottom:8px;">The numbers behind the team.</h2>
+      <p style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);">KRAIN 2024–2025 · Tiago Leao last 30 days</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box reveal">
+        <div class="stat-box-val">$130M+</div>
+        <div class="stat-box-label">Total Deal Volume</div>
+        <div class="stat-box-sub">$69M buyer · $62M listing sides · 2024–2025</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-box-val">115+</div>
+        <div class="stat-box-label">Deals Closed</div>
+        <div class="stat-box-sub">Buyer transactions completed · 2024–2025</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-box-val">145K</div>
+        <div class="stat-box-label">YouTube Subscribers</div>
+        <div class="stat-box-sub">KRAIN's active subscriber base</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-box-val">120K</div>
+        <div class="stat-box-label">Instagram Followers</div>
+        <div class="stat-box-sub">KRAIN's engaged social audience</div>
+      </div>
+      <div class="stat-box reveal" style="border-color:var(--gold);background:rgba(201,169,110,0.06);">
+        <div class="stat-box-val" style="color:var(--gold);">200K+</div>
+        <div class="stat-box-label" style="color:rgba(255,255,255,0.7);">Views in 30 Days</div>
+        <div class="stat-box-sub">Tiago Leao — personal social media reach this month</div>
+      </div>
+      <div class="stat-box reveal">
+        <div class="stat-box-val">28+</div>
+        <div class="stat-box-label">House Hunters Episodes</div>
+        <div class="stat-box-sub">KRAIN featured on HGTV · ongoing reruns worldwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="problem-header reveal">
+      <p class="section-label">Why It Hasn't Sold</p>
+      <h2>The old approach doesn't reach<br>today's international buyer.</h2>
+    </div>
+    <div class="problem-card reveal">
+      <div class="icon">🎬</div>
+      <h3>Storytelling sells Reserva Conchal</h3>
+      <p>Buyers don't fall in love with specs — they fall in love with a life. The golf at sunrise, the private beach, the community. Villa Carao 12 needs a narrative, not a listing. Most agents produce neither.</p>
+    </div>
+    <div class="problem-card reveal">
+      <div class="icon">🔍</div>
+      <h3>SEO is a long game most agents ignore</h3>
+      <p>Buyers researching "luxury homes in Reserva Conchal" or "golf community Costa Rica" are warm leads already in motion. AI-powered SEO puts your property in front of them at the exact moment they're searching — organically and permanently.</p>
+    </div>
+    <div class="problem-card reveal">
+      <div class="icon">🤖</div>
+      <h3>AI changes what's possible in real estate marketing</h3>
+      <p>From AI audience targeting that finds buyers who match Villa Carao 12's profile, to AI-optimized listing descriptions, video titles, and ad copy — we use technology that most agents in this market have never heard of.</p>
+    </div>
+    <div class="problem-card reveal">
+      <div class="icon">🌍</div>
+      <h3>International visibility requires an international strategy</h3>
+      <p>At $1,490,000 your buyer is likely abroad — researching from the US, Canada, or Europe. Reaching them requires global platform syndication, multilingual exposure, and a content strategy built for international discovery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps">
+  <div class="steps-header reveal">
+    <p class="section-label">The Plan</p>
+    <h2>Five ways we market smarter.</h2>
+    <p>AI-driven, story-led, and built for international discovery. Click each to see exactly what this means for Villa Carao 12.</p>
+  </div>
+
+  <div class="step" onclick="toggleStep(this)">
+    <div class="step-num-wrap"><div class="step-num">1</div></div>
+    <div class="step-body">
+      <p class="step-tag">Storytelling & Visual Production</p>
+      <h3 class="step-title">We sell the life at Reserva Conchal — not just the house</h3>
+      <p class="step-desc">Villa Carao 12 isn't just a 4-bedroom villa. It's mornings on a world-class golf course, private beach access, sunsets from a ridge in one of Costa Rica's most exclusive gated communities. That story needs to be told through cinematic video, golden hour photography, and drone footage that shows the full context of what this property represents. We produce every piece of this content in-house — no outsourcing, no compromise. The result is content that makes a buyer in Chicago or Toronto feel like they're already living there.</p>
+      <div class="step-pills">
+        <span class="pill">Cinematic lifestyle walkthrough</span>
+        <span class="pill">Golden hour & sunset photography</span>
+        <span class="pill">Drone footage — golf course & ocean</span>
+        <span class="pill">Narrative-first video scripting</span>
+        <span class="pill">AI-enhanced editing</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" onclick="toggleStep(this)">
+    <div class="step-num-wrap"><div class="step-num">2</div></div>
+    <div class="step-body">
+      <p class="step-tag">AI-Powered SEO</p>
+      <h3 class="step-title">Found by the right buyer — before they even know they're looking</h3>
+      <p class="step-desc">When someone searches "luxury golf community Costa Rica," "Reserva Conchal homes for sale," or "best gated communities in Guanacaste" — we want Villa Carao 12 to appear. We use AI tools to identify the highest-value search terms your ideal buyer is using, then optimize your listing title, description, and supporting content to rank for those terms across Google, YouTube, and listing portals. This is long-game marketing that most agents don't understand and almost none of them do. The content we create doesn't disappear after 24 hours — it compounds over time and keeps generating discovery.</p>
+      <div class="step-pills">
+        <span class="pill">AI keyword research</span>
+        <span class="pill">Listing SEO optimization</span>
+        <span class="pill">YouTube SEO — video titles & descriptions</span>
+        <span class="pill">Google-indexed content</span>
+        <span class="pill">Long-term organic discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" onclick="toggleStep(this)">
+    <div class="step-num-wrap"><div class="step-num">3</div></div>
+    <div class="step-body">
+      <p class="step-tag">AI Audience Targeting & Paid Ads</p>
+      <h3 class="step-title">AI finds your buyer — we put your property in front of them</h3>
+      <p class="step-desc">We run targeted paid campaigns using Meta and Google's AI audience tools — which analyze behavior, interests, and purchase signals to identify people who match the exact profile of a Villa Carao 12 buyer. High-net-worth individuals in the US and Canada who have shown interest in luxury real estate, golf communities, and international lifestyle. Your property reaches them with a compelling video ad before they even start actively searching. We A/B test multiple ad creatives using AI to continuously optimize what's working. Combined with our 200K+ monthly social views, this creates a compounding reach that a standard listing agent simply cannot replicate.</p>
+      <div class="step-pills">
+        <span class="pill">Meta AI audience targeting</span>
+        <span class="pill">Google Display Network</span>
+        <span class="pill">Luxury & golf lifestyle segments</span>
+        <span class="pill">AI-optimized A/B testing</span>
+        <span class="pill">Video ad campaigns</span>
+        <span class="pill">Retargeting warm audiences</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" onclick="toggleStep(this)">
+    <div class="step-num-wrap"><div class="step-num">4</div></div>
+    <div class="step-body">
+      <p class="step-tag">International Platform Syndication</p>
+      <h3 class="step-title">Your listing on every platform that matters globally</h3>
+      <p class="step-desc">At $1,490,000 Villa Carao 12 qualifies for Luxury Portfolio International — KRAIN's global luxury marketing network that markets properties to high-net-worth buyers across 60+ countries. Combined with Leading Real Estate Companies of the World (550+ brokerages worldwide), Mayfair International Realty (UK and European buyers), Realtor.com, Omni MLS, and KRAIN's own dual-website setup, your listing will have the most complete international coverage available in Costa Rica.</p>
+      <div class="step-pills">
+        <span class="pill">Luxury Portfolio Intl. — 60+ countries</span>
+        <span class="pill">Leading RE — 550+ brokerages</span>
+        <span class="pill">Mayfair Intl. — UK & Europe</span>
+        <span class="pill">Realtor.com — USA & Canada</span>
+        <span class="pill">Omni MLS — Latin America</span>
+        <span class="pill">KRAIN.com dual-site syndication</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step" onclick="toggleStep(this)">
+    <div class="step-num-wrap"><div class="step-num">5</div></div>
+    <div class="step-body">
+      <p class="step-tag">Agent Network & Direct Outreach</p>
+      <h3 class="step-title">The network other agents don't have access to</h3>
+      <p class="step-desc">Costa Rica doesn't have a unified MLS — the market runs through active agent WhatsApp networks where hundreds of local agents share new listings in real time and match them to their active buyers. KRAIN is plugged into every one of those networks. On top of that, we will send a dedicated email to KRAIN's full buyer database, personally reach out to agents actively working with buyers in this price range, and leverage all five of KRAIN's Guanacaste offices to ensure your listing is in front of every buyer who walks through our doors.</p>
+      <div class="step-pills">
+        <span class="pill">Agent WhatsApp networks</span>
+        <span class="pill">KRAIN buyer database email</span>
+        <span class="pill">Direct agent-to-agent outreach</span>
+        <span class="pill">5 KRAIN offices — all of Guanacaste</span>
+        <span class="pill">International referral partners</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-inner">
+    <div class="video-header reveal">
+      <p class="section-label">The Standard We Set</p>
+      <h2>This is what storytelling looks like<br>when it's done right.</h2>
+      <p>Every property we take on gets this level of cinematic production — narrative-driven, lifestyle-first content that connects emotionally before it sells rationally. This is what Villa Carao 12 has been missing.</p>
+    </div>
+    <div class="video-embed reveal">
+      <iframe
+        src="https://www.youtube.com/embed/v_rSOWhxVvE"
+        title="KRAIN Real Estate — Property Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- REACH -->
+<section class="reach">
+  <div class="reach-header reveal">
+    <p class="section-label">Where Your Listing Will Appear</p>
+    <h2>Every platform. Every market.</h2>
+    <p>No other brokerage in Guanacaste can offer this combination of local expertise and international reach.</p>
+  </div>
+  <div class="reach-grid">
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">Social — 145K+</p>
+      <h3>KRAIN YouTube</h3>
+      <p>Full cinematic property tour published to KRAIN's main channel with SEO-optimized title and description.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">Social — 120K+ each</p>
+      <h3>Instagram & Facebook</h3>
+      <p>Property Reels, photo carousels, and Stories across KRAIN's main channels and our personal accounts.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">Luxury — 60+ Countries</p>
+      <h3>Luxury Portfolio Intl.</h3>
+      <p>KRAIN's exclusive luxury network for properties over $1M. Global high-net-worth buyer exposure.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">Global — 550+ Brokerages</p>
+      <h3>Leading RE Companies</h3>
+      <p>The world's largest network of top-tier independent brokerages. Your listing reaches their agents and buyer clients.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">UK & Europe</p>
+      <h3>Mayfair Intl. Realty</h3>
+      <p>KRAIN's exclusive London affiliate connecting your property to European buyers actively seeking international real estate.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">USA & Canada</p>
+      <h3>Realtor.com</h3>
+      <p>One of the largest property portals in North America — reaching US and Canadian buyers early in their search.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">Latin America</p>
+      <h3>Omni MLS</h3>
+      <p>The leading property portal in Latin America — reaching Latin American buyers actively searching in Costa Rica.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">Local — Hundreds of Agents</p>
+      <h3>Guanacaste Agent Network</h3>
+      <p>Active WhatsApp groups covering all local agents — the way the CR market actually moves properties fast.</p>
+    </div>
+    <div class="reach-card reveal">
+      <p class="reach-card-tag">SEO — Global Search</p>
+      <h3>YouTube Search Engine</h3>
+      <p>YouTube is the world's second largest search engine. Our SEO-optimized property videos rank for "Reserva Conchal homes," "luxury Costa Rica real estate," and the exact terms your buyer is searching.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="difference-inner">
+    <h2>Why <em>this</em> is different<br>from what you've tried before.</h2>
+    <p>We are not a typical listing agent. We are a content creation team, a marketing operation, and a global network — with the local knowledge to back it up.</p>
+    <div class="diff-grid">
+      <div class="diff-item reveal">
+        <div class="diff-icon">🎬</div>
+        <h4>Narrative-first content</h4>
+        <p>We don't list a property — we tell its story. Every video, photo, and description is crafted to create an emotional connection before a buyer ever books a showing.</p>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-icon">🤖</div>
+        <h4>AI at every stage</h4>
+        <p>AI keyword research, AI audience targeting, AI-optimized ad creative, AI-assisted editing. We use technology that gives your listing a compounding advantage over time.</p>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-icon">🔍</div>
+        <h4>SEO that compounds</h4>
+        <p>Content that ranks on Google and YouTube doesn't disappear after 48 hours. Our SEO strategy builds long-term organic discovery that keeps working after launch.</p>
+      </div>
+      <div class="diff-item reveal">
+        <div class="diff-icon">🌐</div>
+        <h4>Truly global reach</h4>
+        <p>Luxury Portfolio International, Leading RE, Mayfair London, Realtor.com — your listing is in front of qualified buyers in 60+ countries, not just local portal browsers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section reveal">
+  <p class="section-label">Next Steps</p>
+  <h2>Ready to give Villa Carao 12<br>the exposure it deserves?</h2>
+  <p>We are ready to move immediately. Reach out to Tiago or Josh and let's get started.</p>
+  <div class="cta-cards">
+    <a class="cta-card" href="https://wa.me/50688888888">
+      <div class="cta-icon">💬</div>
+      <h4>WhatsApp Us</h4>
+      <p>Quickest way to connect</p>
+    </a>
+    <a class="cta-card" href="mailto:info@kraincostarica.com">
+      <div class="cta-icon">✉️</div>
+      <h4>Send an Email</h4>
+      <p>info@kraincostarica.com</p>
+    </a>
+    <a class="cta-card" href="https://kraincostarica.com">
+      <div class="cta-icon">🌐</div>
+      <h4>Visit KRAIN</h4>
+      <p>kraincostarica.com</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">KRAIN · Luxury Real Estate</div>
+  <p>Tiago Leao & Josh Roistacher · kraincostarica.com · Guanacaste, Costa Rica</p>
+</footer>
+
+<script>
+  // Accordion steps
+  function toggleStep(el) {
+    const isActive = el.classList.contains('active');
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    if (!isActive) el.classList.add('active');
+  }
+
+  // Auto-open first step
+  document.querySelector('.step').classList.add('active');
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
